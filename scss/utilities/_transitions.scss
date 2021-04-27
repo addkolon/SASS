@@ -1,0 +1,143 @@
+$transition-base:   all .2s ease-in-out !default;
+
+.fade-in-onload {
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  .swiper-slide-active .move-up {
+    animation: moveUp 1.5s ease-out;
+    -webkit-animation: moveUp 1.5s ease-out;
+    -moz-animation: moveUp 1.5s ease-out;
+    -o-animation: moveUp 1.5s ease-out;
+    -ms-animation: moveUp 1.5s ease-out;
+    
+    &.delay-1{
+        animation: moveUp 1s 0.5s both;
+    }
+
+    &.delay-2{
+        animation: moveUp 1s 1s both;
+    }
+  }
+  @keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    ;}
+    25% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+  
+  @-moz-keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    ;}
+    25% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    ;}
+    25% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+  }
+  
+  @-o-keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    ;}
+    25% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+  }
+  
+  @-ms-keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    ;}
+    25% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+  }
+
+
+
+.swiper-slide-active{
+  .underline {
+    background-image: linear-gradient(90deg, $orange-1 3%, rgba($orange-1, 0) 95%, transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 110% 0.5em;
+    animation: growFromLeft 1s both cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-delay: 1.5s;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  @keyframes growFromLeft {
+    0% {
+      background-position: -200px 120%;
+    }
+
+    100% {
+      background-position: 0px 120%;
+    }
+  }
+}
