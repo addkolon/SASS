@@ -1,0 +1,144 @@
+.swiper-container{
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin banner($imgPath, $position, $overlayColor, $overlayOpacity) {
+    background-image: url($imgPath);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background-image: url($imgPath);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: " ";
+        background-color: $overlayColor;
+        opacity: $overlayOpacity;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &:hover {
+        .pagination {
+            opacity: 1;
+        }
+    }
+
+    .banner-content {
+        width: 50%;
+        z-index: 4;
+        position: absolute;
+        left: $position;
+
+        span {
+            color: white;
+            font-size: 6rem;
+            display: block;
+            text-transform: uppercase;
+            font-weight: 900;
+
+            &.title {
+                margin-bottom: 1rem;
+            }
+
+            &.subtitle {
+                font-size: 2rem;
+                font-weight: 100;
+                font-style: italic;
+                margin-bottom: 3rem;
+                text-transform: none;                
+            }
+        }
+
+        button {
+            background-color: transparent;
+            cursor: pointer;
+            border: 2px solid white;
+            color: white;
+            box-shadow: inset 0px 0px 0px transparent;
+            transition: all 0.5s !important;
+
+            &:hover{
+                color: $overlayColor;
+                box-shadow: inset 300px 0px 0px white;
+            }
+        }
+    } 
+    
+    .pagination {
+        transition: $transition-base;
+        z-index: 4;
+        opacity: 0;
+
+        ul {
+            @include list-reset();
+            position: absolute;
+            bottom: 4%;
+            transform: translateX(-50%);
+
+            li {
+                display: inline-block;
+                padding: 0 0.5rem;
+                color: white;
+
+                &::before {
+                    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f111";
+                }
+
+                &.active::before{
+                    font-family: "Font Awesome 5 Free"; font-weight: 400; content: "\f192";
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        i {
+            color: white;
+            font-size: 3rem;
+            
+
+        }
+        .pag-left {
+            position: absolute;
+            left: 2%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .pag-right {
+            position: absolute;
+            right: 2%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }   
+}
